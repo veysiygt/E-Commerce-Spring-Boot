@@ -1,47 +1,17 @@
-# E-commerce-Java
+# E-commerce Java API
 
-This is a basic Spring Boot project created using Spring Initializr.
+This is a basic Spring Boot project created using Spring Initializr with Maven and Java 20.
 
-## Getting Started
+## Project Structure
 
-To get started with this project, clone the repository and import the project into your IDE of choice.
+The project has the following structure:
 
-### Prerequisites
+- `src`: Contains the source code.
+- `src/main`: Contains the main source code.
+- `src/main/java`: Contains the Java source code.
+- `src/main/resources`: Contains the resources used by the application.
 
-- Java 11 or higher
-- Maven 3.6.0 or higher
+## Spring Boot Documentation
 
-### Installing
-
-To install the required dependencies, run the following command:
-
-
-### Running the application
-
-To run the application, run the following command:
-
-
-## Built With
-
-- [Spring Boot](https://spring.io/projects/spring-boot) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-
-- John Doe - Initial work - johndoe
-- Jane Smith - Documentation - janesmith
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+For more information about Spring Boot, please refer to the official Spring Boot Documentation at https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/.
 
