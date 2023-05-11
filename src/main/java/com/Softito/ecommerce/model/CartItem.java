@@ -1,6 +1,6 @@
 package com.Softito.ecommerce.model;
 
-import lombok.AllArgsConstructor;
+/*import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -29,4 +29,4 @@ public class CartItem {
     private double discount;
     private double productPrice;
 
-}
+}*/

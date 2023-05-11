@@ -19,31 +19,29 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
+    @Column(name = "id",nullable = false)
+    private Long id;
 
     @NotBlank
     @Size(min = 3, message = "Product name must contain atleast 3 characters")
-    private String productName;
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
-    private String image;
+    //private String image;
 
     @NotBlank
     @Size(min = 6, message = "Product description must contain atleast 6 characters")
+    @Column(name = "description", nullable = false)
     private String description;
 
     private Integer quantity;
+    @Column(name = "price")
     private double price;
-    private double discount;
-    private double specialPrice;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(mappedBy = "product", cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
-    private List<CartItem> products = new ArrayList<>();
 
-    @OneToMany(mappedBy = "product", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-    private List<OrderItem> orderItems = new ArrayList<>();
 
 }

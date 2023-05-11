@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "addresses")
@@ -19,42 +17,36 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long addressId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @NotBlank
-    @Size(min = 5, message = "Street name must contain atleast 5 characters")
-    private String street;
+    @Size(min = 10, max = 512, message = "Adrress Line 1 must contain atleast 10 characters")
+    @Column(name = "address_line_1", nullable = false, length = 512)
+    private String addressLine1;
 
     @NotBlank
-    @Size(min = 5, message = "Building name must contain atleast 5 characters")
-    private String buildingName;
+    @Size(min = 10, max = 512, message = "Address Line 2 must contain atleast 10 characters")
+    @Column(name = "addres_line_2", nullable = false, length = 512)
+    private String addressLine2;
 
     @NotBlank
-    @Size(min = 4, message = "City name must contain atleast 4 characters")
-    private String city;
-
-    @NotBlank
-    @Size(min = 2, message = "State name must contain atleast 2 characters")
-    private String state;
-
-    @NotBlank
-    @Size(min = 2, message = "Country name must contain atleast 2 characters")
+    @Size(min = 3, max = 75, message = "Country name must contain atleast 3 characters")
+    @Column(name = "country", nullable = false, length = 75)
     private String country;
 
     @NotBlank
-    @Size(min = 6, message = "Pincode must contain atleast 6 characters")
-    private String pincode;
+    @Size(min = 3, message = "City name must contain atleast 3 characters")
+    @Column(name = "city", nullable = false)
+    private String city;
 
-    @ManyToMany(mappedBy = "addresses")
-    private List<User> users = new ArrayList<>();
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    public Address(String country, String state, String city, String pincode, String street, String buildingName) {
-        this.country = country;
-        this.state = state;
-        this.city = city;
-        this.pincode = pincode;
-        this.street = street;
-        this.buildingName = buildingName;
-    }
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address address;
+
 
 }

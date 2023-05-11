@@ -1,6 +1,6 @@
 package com.Softito.ecommerce.model;
 
-import lombok.AllArgsConstructor;
+/*import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,4 +26,4 @@ public class Payment {
     @Size(min = 4, message = "Payment method must contain atleast 4 characters")
     private String paymentMethod;
 
-}
+}*/

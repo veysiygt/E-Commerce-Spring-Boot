@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,13 +19,16 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @NotBlank
     @Size(min = 5, message = "Category name must contain atleast 5 characters")
-    private String categoryName;
+    @Column(name = "name",nullable = false)
+    private String name;
 
-    @OneToMany(mappedBy = "category", cascade =  CascadeType.ALL )
-    private List<Product> products;
+    @OneToMany(mappedBy = "category")
+    private List<Product> products = new ArrayList<>();
+
 
 }

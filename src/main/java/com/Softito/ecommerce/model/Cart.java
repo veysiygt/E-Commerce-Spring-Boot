@@ -1,6 +1,6 @@
 package com.Softito.ecommerce.model;
 
-import lombok.AllArgsConstructor;
+/*import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,10 +21,10 @@ public class Cart {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private LocalUser user;
 
     @OneToMany(mappedBy = "cart", cascade = { CascadeType.PERSIST, CascadeType.MERGE }, orphanRemoval = true)
     private List<CartItem> cartItems = new ArrayList<>();
 
     private Double totalPrice = 0.0;
-}
+}*/
