@@ -1,4 +1,4 @@
-# E-commerce Java API
+# E-commerce Java Spring Boot API
 
 This is a basic Spring Boot project created using Spring Initializr with Maven and Java 20.
 
