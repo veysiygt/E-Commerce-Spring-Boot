@@ -18,8 +18,10 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().disable();
-        http.authorizeHttpRequests().anyRequest().permitAll();
-
+        http.addFilterBefore(jwtRequestFilter, AuthorizationFilter.class);
+        http.authorizeHttpRequests()
+                .antMatchers("/product", "/auth/register", "/auth/login").permitAll()
+                .anyRequest().authenticated();
         return http.build();
     }
 
