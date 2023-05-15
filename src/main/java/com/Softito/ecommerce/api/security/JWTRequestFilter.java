@@ -1,7 +1,7 @@
 package com.Softito.ecommerce.api.security;
 
 import com.Softito.ecommerce.model.User;
-import com.Softito.ecommerce.model.dao.UserDao;
+import com.Softito.ecommerce.model.dao.UserDAO;
 import com.Softito.ecommerce.service.JWTService;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
     @Autowired
     private JWTService jwtService;
     @Autowired
-    private UserDao userDao;
+    private UserDAO userDao;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String tokenHeader = request.getHeader("Authorization");

@@ -4,7 +4,7 @@ import com.Softito.ecommerce.api.dto.LoginRequestDTO;
 import com.Softito.ecommerce.api.dto.RegisterDTO;
 import com.Softito.ecommerce.exception.RegisterException;
 import com.Softito.ecommerce.model.User;
-import com.Softito.ecommerce.model.dao.UserDao;
+import com.Softito.ecommerce.model.dao.UserDAO;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    private UserDao userDao;
+    private UserDAO userDao;
     @Autowired
     private JWTService jwtService;
     @Autowired

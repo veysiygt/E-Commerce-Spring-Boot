@@ -1,4 +1,4 @@
-package com.Softito.ecommerce.api.controller.auth;
+package com.Softito.ecommerce.api.controller;
 
 import com.Softito.ecommerce.api.dto.LoginRequestDTO;
 import com.Softito.ecommerce.api.dto.LoginResponseDTO;
@@ -6,6 +6,8 @@ import com.Softito.ecommerce.api.dto.RegisterDTO;
 import com.Softito.ecommerce.exception.RegisterException;
 import com.Softito.ecommerce.model.User;
 import com.Softito.ecommerce.service.UserService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @RestController
 @RequestMapping("/auth")
 public class AuthenticationController {
