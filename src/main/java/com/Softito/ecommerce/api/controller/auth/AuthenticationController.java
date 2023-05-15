@@ -4,10 +4,12 @@ import com.Softito.ecommerce.api.dto.LoginRequestDTO;
 import com.Softito.ecommerce.api.dto.LoginResponseDTO;
 import com.Softito.ecommerce.api.dto.RegisterDTO;
 import com.Softito.ecommerce.exception.RegisterException;
+import com.Softito.ecommerce.model.User;
 import com.Softito.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -18,6 +20,7 @@ public class AuthenticationController {
 
     @Autowired
     private UserService userService;
+    private User user;
 
 
     @PostMapping("/register")
@@ -40,6 +43,11 @@ public class AuthenticationController {
             responseDTO.setJwt(jwt);
             return ResponseEntity.ok(responseDTO);
         }
+    }
+
+    @GetMapping("/profile")
+    public User getLoggedUserProfile(@AuthenticationPrincipal User user){
+        return user;
     }
 
 }

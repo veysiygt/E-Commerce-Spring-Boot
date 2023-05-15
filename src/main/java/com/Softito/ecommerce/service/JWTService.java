@@ -21,15 +21,19 @@ public class JWTService {
     private static final String USERNAME_KEY = "USERNAME";
     private Algorithm algorithm;
     @PostConstruct
-    public void postConstruct(){
+    public void postConstruct() {
         algorithm = Algorithm.HMAC256(algorithmKey);
     }
     public String generateJWT(User user){
         return JWT.create()
-                .withClaim("USERNAME_KEY",user.getUsername())
+                .withClaim(USERNAME_KEY,user.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis() + (1000 * expiryInSeconds)))
                 .withIssuer(issuer)
                 .sign(algorithm);
+    }
+
+    public String getUsername(String token){
+        return JWT.decode(token).getClaim(USERNAME_KEY).asString();
     }
 
 }

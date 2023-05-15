@@ -1,6 +1,6 @@
 package com.Softito.ecommerce.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
@@ -14,6 +14,7 @@ public class EncryptionService {
     private int saltRounds;
 
     private String salt;
+
 
     @PostConstruct
     public void postConstruct(){

@@ -5,11 +5,15 @@ import com.Softito.ecommerce.api.dto.RegisterDTO;
 import com.Softito.ecommerce.exception.RegisterException;
 import com.Softito.ecommerce.model.User;
 import com.Softito.ecommerce.model.dao.UserDao;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Service
 public class UserService {
 
