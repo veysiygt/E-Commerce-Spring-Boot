@@ -35,4 +35,9 @@ public class ProductService {
         }
     }
 
+    public List<Product> searchProducts(String keyword) {
+        List<Product> products = productDAO.findByDescription(keyword);
+        return products;
+    }
+
 }
