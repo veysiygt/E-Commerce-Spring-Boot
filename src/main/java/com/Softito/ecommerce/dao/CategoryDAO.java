@@ -1,4 +1,4 @@
-package com.Softito.ecommerce.model.dao;
+package com.Softito.ecommerce.dao;
 
 import com.Softito.ecommerce.model.Category;
 import com.Softito.ecommerce.repository.ListCrudRepository;

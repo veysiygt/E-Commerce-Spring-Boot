@@ -2,7 +2,7 @@ package com.Softito.ecommerce.api.controller;
 
 import com.Softito.ecommerce.model.Address;
 import com.Softito.ecommerce.model.User;
-import com.Softito.ecommerce.model.dao.AddressDAO;
+import com.Softito.ecommerce.dao.AddressDAO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

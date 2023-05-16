@@ -2,7 +2,7 @@ package com.Softito.ecommerce.service;
 
 import com.Softito.ecommerce.model.Order;
 import com.Softito.ecommerce.model.User;
-import com.Softito.ecommerce.model.dao.OrderDAO;
+import com.Softito.ecommerce.dao.OrderDAO;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

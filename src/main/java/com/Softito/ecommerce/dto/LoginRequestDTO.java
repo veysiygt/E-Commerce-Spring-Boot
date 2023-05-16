@@ -1,4 +1,4 @@
-package com.Softito.ecommerce.api.dto;
+package com.Softito.ecommerce.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,7 +1,7 @@
 package com.Softito.ecommerce.service;
 
 import com.Softito.ecommerce.model.Product;
-import com.Softito.ecommerce.model.dao.ProductDAO;
+import com.Softito.ecommerce.dao.ProductDAO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

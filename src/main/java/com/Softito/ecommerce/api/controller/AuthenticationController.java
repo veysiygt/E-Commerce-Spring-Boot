@@ -1,8 +1,8 @@
 package com.Softito.ecommerce.api.controller;
 
-import com.Softito.ecommerce.api.dto.LoginRequestDTO;
-import com.Softito.ecommerce.api.dto.LoginResponseDTO;
-import com.Softito.ecommerce.api.dto.RegisterDTO;
+import com.Softito.ecommerce.dto.LoginRequestDTO;
+import com.Softito.ecommerce.dto.LoginResponseDTO;
+import com.Softito.ecommerce.dto.RegisterDTO;
 import com.Softito.ecommerce.exception.RegisterException;
 import com.Softito.ecommerce.model.User;
 import com.Softito.ecommerce.service.UserService;

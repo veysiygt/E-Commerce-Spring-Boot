@@ -1,7 +1,7 @@
 package com.Softito.ecommerce.api.security;
 
 import com.Softito.ecommerce.model.User;
-import com.Softito.ecommerce.model.dao.UserDAO;
+import com.Softito.ecommerce.dao.UserDAO;
 import com.Softito.ecommerce.service.JWTService;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import org.springframework.beans.factory.annotation.Autowired;
