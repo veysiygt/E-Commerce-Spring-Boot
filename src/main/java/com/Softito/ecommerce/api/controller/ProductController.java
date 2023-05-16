@@ -1,6 +1,8 @@
 package com.Softito.ecommerce.api.controller;
 
+import com.Softito.ecommerce.model.Category;
 import com.Softito.ecommerce.model.Product;
+import com.Softito.ecommerce.service.CategoryService;
 import com.Softito.ecommerce.service.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +23,8 @@ import java.util.Optional;
 public class ProductController {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private CategoryService categoryService;
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = productService.getProducts();
@@ -43,5 +47,15 @@ public class ProductController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/{productName}/categories")
+    public ResponseEntity<List<Category>> getCategoriesByProductName(@PathVariable String productName) {
+        List<Category> categories = categoryService.getCategoriesByProductName(productName);
+        if (categories != null) {
+            return new ResponseEntity<>(categories, HttpStatus.OK);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 
 }

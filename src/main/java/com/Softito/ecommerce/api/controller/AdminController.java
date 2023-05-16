@@ -1,4 +1,4 @@
-package com.Softito.ecommerce.restController;
+package com.Softito.ecommerce.api.controller;
 
 import com.Softito.ecommerce.model.Admin;
 import com.Softito.ecommerce.repository.AdminRepository;
