@@ -35,7 +35,7 @@ public class Product {
     @Column(name = "description", nullable = false)
     private String description;
 
-    private Integer quantity;
+    private int quantity;
     @Column(name = "price")
     private double price;
     @JsonBackReference

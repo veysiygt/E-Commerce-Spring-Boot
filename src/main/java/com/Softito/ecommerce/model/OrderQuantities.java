@@ -27,6 +27,7 @@ public class OrderQuantities {
     @Column(name = "quantity", nullable = false)
     @Min(value = 1, message = "Quantity must be greater than zero")
     private Integer quantity;
+
     @JsonIgnore
     @ManyToOne(optional = false)
     @JoinColumn(name = "order_id", nullable = false)
