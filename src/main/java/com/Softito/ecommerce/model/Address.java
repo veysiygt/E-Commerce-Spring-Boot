@@ -22,12 +22,12 @@ public class Address {
     private Long id;
 
     @NotBlank
-    @Size(min = 10, max = 512, message = "Adrress Line 1 must contain atleast 10 characters")
+    @Size(min = 5, max = 512, message = "Adrress Line 1 must contain atleast 10 characters")
     @Column(name = "address_line_1", nullable = false, length = 512)
     private String addressLine1;
 
     @NotBlank
-    @Size(min = 10, max = 512, message = "Address Line 2 must contain atleast 10 characters")
+    @Size(min = 5, max = 512, message = "Address Line 2 must contain atleast 10 characters")
     @Column(name = "addres_line_2", nullable = false, length = 512)
     private String addressLine2;
 
@@ -45,10 +45,5 @@ public class Address {
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "address_id", nullable = false)
-    private Address address;
-
 
 }
