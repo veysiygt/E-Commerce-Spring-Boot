@@ -24,6 +24,8 @@ public class Order {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    private double price;
+
     @OneToMany(mappedBy = "order", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<OrderQuantities> quantities = new ArrayList<>();
 
